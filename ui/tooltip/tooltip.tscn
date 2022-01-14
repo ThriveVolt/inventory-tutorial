@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/font/custom_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://ui/tooltip/tooltip.gd" type="Script" id=2]
+
+[node name="Tooltip" type="ColorRect"]
+margin_right = 40.0
+margin_bottom = 40.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+mouse_filter = 2
+custom_constants/margin_right = 4
+custom_constants/margin_top = 2
+custom_constants/margin_left = 4
+custom_constants/margin_bottom = 2
+
+[node name="ItemName" type="Label" parent="MarginContainer"]
+margin_left = 4.0
+margin_top = 18.0
+margin_right = 36.0
+margin_bottom = 22.0
+custom_fonts/font = ExtResource( 1 )
