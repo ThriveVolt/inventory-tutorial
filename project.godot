@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "GridContainer",
+"class": "SlotContainer",
+"language": "GDScript",
+"path": "res://ui/slot_container/slot_container.gd"
+} ]
+_global_script_class_icons={
+"SlotContainer": ""
+}
+
 [application]
 
 config/name="InventoryTutorial"
