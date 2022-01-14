@@ -10,6 +10,11 @@ var items = []
 func _ready():
 	for i in range(slots):
 		items.append({})
+	items[0] = Global.get_item_by_key("sword")
+	items[1] = Global.get_item_by_key("armor")
+	items[2] = Global.get_item_by_key("apple")
+	items[3] = Global.get_item_by_key("apple")
+	items[4] = Global.get_item_by_key("potion")
 
 func set_item(index, item):
 	var previous_item = items[index]
