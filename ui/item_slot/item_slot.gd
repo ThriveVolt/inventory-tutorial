@@ -10,3 +10,8 @@ func display_item(item):
 	else:
 		item_icon.texture = null
 		item_quantity.text = ""
+	if get_parent() and get_parent().name == "Hotbar":
+		if get_index() == Inventory.selected:
+			color = "#7b7b7b"
+		else:
+			color = "#333333"

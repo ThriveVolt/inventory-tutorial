@@ -20,6 +20,8 @@ func _on_ItemSlot_gui_input(event, index):
 		if event.button_index == BUTTON_LEFT and event.pressed:
 			if inventory_menu.visible:
 				drag_item(index)
+			elif hotbar.visible:
+				select_item(index)
 		elif event.button_index == BUTTON_RIGHT and event.pressed:
 			if inventory_menu.visible:
 				split_item(index)
@@ -55,3 +57,6 @@ func split_item(index):
 			item.quantity = split_amount
 			drag_preview.dragged_item = item
 			Inventory.set_item_quantity(index, -split_amount)
+
+func select_item(index):
+	Inventory.set_selected(index)
