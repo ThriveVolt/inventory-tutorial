@@ -1,0 +1,24 @@
+{
+    "sword": {
+        "name": "Sword",
+        "icon": "sword.png",
+        "stackable": false
+    },
+    "armor": {
+        "name": "Armor",
+        "icon": "armor.png",
+        "stackable": false
+    },
+    "apple": {
+        "name": "Apple",
+        "icon": "apple.png",
+        "stackable": true,
+        "quantity": 1
+    },
+    "potion": {
+        "name": "Potion",
+        "icon": "potion.png",
+        "stackable": true,
+        "quantity": 1
+    }
+}
