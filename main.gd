@@ -53,7 +53,7 @@ func drag_item(index):
 func split_item(index):
 		var inventory_item = Inventory.items[index]
 		var dragged_item = drag_preview.dragged_item
-		if !inventory_item: return
+		if !inventory_item or !inventory_item.stackable: return
 		var split_amount = ceil(inventory_item.quantity / 2.0)
 		if dragged_item and inventory_item.key == dragged_item.key:
 			drag_preview.dragged_item.quantity += split_amount
