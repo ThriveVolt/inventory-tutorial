@@ -54,7 +54,7 @@ func split_item(index):
 		var inventory_item = Inventory.items[index]
 		var dragged_item = drag_preview.dragged_item
 		if !inventory_item: return
-		var split_amount = ceil(inventory_item.quantity / 2)
+		var split_amount = ceil(inventory_item.quantity / 2.0)
 		if dragged_item and inventory_item.key == dragged_item.key:
 			drag_preview.dragged_item.quantity += split_amount
 			Inventory.set_item_quantity(index, -split_amount)
