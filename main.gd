@@ -1,5 +1,7 @@
 extends Node2D
 
+var ItemPackedScene = preload("res://actors/item/item.tscn")
+
 onready var hotbar = $UI/Hotbar
 onready var inventory_menu = $UI/InventoryMenu
 onready var drag_preview = $UI/DragPreview
@@ -18,6 +20,11 @@ func _ready():
 		item_slot.connect("gui_input", self, "_on_ItemSlot_gui_input", [index])
 		item_slot.connect("mouse_entered", self, "show_tooltip", [index])
 		item_slot.connect("mouse_exited", self, "hide_tooltip")
+		
+		var item = ItemPackedScene.instance()
+		item.key = "armor"
+		item.position = Vector2(200, 40)
+		add_child(item)
 
 func _on_ItemSlot_gui_input(event, index):
 	if event is InputEventMouseButton:
