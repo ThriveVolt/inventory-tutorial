@@ -45,6 +45,28 @@ func set_item_quantity(index, amount):
 	else:
 		broadcast_signal([index])
 
+func add_item(item):
+	item = item.duplicate(true)
+	
+	if item.stackable:
+		for index in range(slots):
+			if items[index] and items[index].key == item.key:
+				set_item_quantity(index, item.quantity)
+				return OK
+	else:
+		var index = find_empty_slot()
+		if index > -1:
+			set_item(index, item)
+			return OK
+	
+	return FAILED
+
+func find_empty_slot():
+	for index in slots:
+		if items[index].empty():
+			return index
+	return -1
+
 # selected
 func set_selected(new_selected):
 	var last_selected = selected
