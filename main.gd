@@ -21,10 +21,10 @@ func _ready():
 		item_slot.connect("mouse_entered", self, "show_tooltip", [index])
 		item_slot.connect("mouse_exited", self, "hide_tooltip")
 		
-		var item = ItemPackedScene.instance()
-		item.key = "armor"
-		item.position = Vector2(200, 40)
-		add_child(item)
+	var item = ItemPackedScene.instance()
+	item.key = "armor"
+	item.position = Vector2(200, 40)
+	add_child(item)
 
 func _on_ItemSlot_gui_input(event, index):
 	if event is InputEventMouseButton:
